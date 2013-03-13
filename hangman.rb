@@ -1,18 +1,15 @@
 class Hangman
+	attr_accessor :word, :dictionary, :letters
 
   def initialize()
     puts "Hangman game!"
   	@dictionary = ["Ruby", "Rails", "Monk"]
+  	@word = @dictionary.sample
   end
 
   # def get_dictionary
   	
   # end
-
-  def select_random_word
-  	n = rand(@dictionary.length)
-  	@word = @dictionary[n]
-  end
 
   def user_prompt
   	puts "Please Enter a Guess"
@@ -20,7 +17,11 @@ class Hangman
   end
 
   def to_letters
-  	@word.split('')
+  	@letters = word.split('')
+  end
+
+  def to_dash
+  	letters.map{|letter| letter.gsub(/[a-z]/, '')}
   end
   
 end
