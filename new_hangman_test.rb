@@ -1,5 +1,5 @@
 require "test/unit"
-require_relative "./new_hangman.rb"
+require_relative "new_hangman"
 
 
 class HangmanTest < Test::Unit::TestCase
@@ -21,8 +21,15 @@ class HangmanTest < Test::Unit::TestCase
 	end
 
 	def test_initialize_starts_with_no_guesses
+		word = "word"
+		h = Hangman.new(word)
+		assert_equal [], h.guessed
 	end
 
-	def test_game_end_when_player_enter_final_letter
-	end
+	# def test_game_end_when_player_enter_final_letter
+	# 	word = "hello"
+	# 	board = "h e l l _"
+	# 	guess = 'o'
+	# 	h = Hangman.new(word)
+	# end
 end
