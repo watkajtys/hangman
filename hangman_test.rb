@@ -3,16 +3,6 @@ require_relative "./hangman.rb"
 
 class HangmanTest < Test::Unit::TestCase
 
-	# def setup
-	# 	@new_game = Hangman.new(word)
-	# end
-
-	# def test_accepts_user_input
-	# 	# new_game = Hangman.new
-	# 	assert_equal true, @new_game.user_prompt.is_a?(String) #test that it is one character
-	# 	assert_equal 1, @new_game.user_prompt.length #test that it is a string
-	# 	assert_not_equal nil, /[a-z]/.match(@new_game.user_prompt) #test that it includes something from a..z
-	# end
 
 	def test_initialize_starts_with_eight_chances
 		h = Hangman.new("this")
@@ -22,6 +12,9 @@ class HangmanTest < Test::Unit::TestCase
 	def test_initialize_has_an_empty_board_of_the_right_size
 		h = Hangman.new('hello')
 		assert_equal "_ _ _ _ _", h.board
+
+		h = Hangman.new('hello!!!')
+		assert_equal "_ _ _ _ _ _ _ _", h.board
 	end
 
 	def test_initialize_starts_with_no_guesses
@@ -33,7 +26,6 @@ class HangmanTest < Test::Unit::TestCase
 		assert_equal word, h.word #Hangman.word
 	end
 
-	def 
 
 	def test_game_ends_when_last_letter_is_guessed_correctly
 		word = "hello"
@@ -48,7 +40,17 @@ class HangmanTest < Test::Unit::TestCase
 	end
 end
 
+
 =begin
+	#Helps you think about it in an API way. 
+
+
+	# def test_accepts_user_input
+	# 	# new_game = Hangman.new
+	# 	assert_equal true, @new_game.user_prompt.is_a?(String) #test that it is one character
+	# 	assert_equal 1, @new_game.user_prompt.length #test that it is a string
+	# 	assert_not_equal nil, /[a-z]/.match(@new_game.user_prompt) #test that it includes something from a..z
+	# end
 	my tests are below
 
 	def test_initialize_sets_random_word

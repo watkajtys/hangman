@@ -1,5 +1,5 @@
 class Hangman
-	attr_accessor :word, :chances
+	attr_accessor :word, :chances, :board
 
 	#This class will run an instance of a hangman game. 
 	#Only concerned with one run of the game. 
@@ -8,7 +8,12 @@ class Hangman
 
 	def initialize(word)
 		@word = word
-		@board = '_ _ _ _ _'
+		#@board = word.length '_ _ _ _ _'
+		@chances = 8
+	end
+
+	def board
+		('_ ' * word.length).strip
 	end
 
 	def guess(letter)
