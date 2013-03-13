@@ -26,7 +26,7 @@ class HangmanTest < Test::Unit::TestCase
 
 	def test_is_replacing_letters_with_dash
 		assert Array @new_game.letters.class
-		# assert_equal @new_game.to_dash.include?('_')
+		assert_equal @new_game.to_dash.include?('_')
 	end
 
   

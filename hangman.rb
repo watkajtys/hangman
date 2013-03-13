@@ -3,7 +3,7 @@ class Hangman
 
   def initialize()
     puts "Hangman game!"
-  	@dictionary = ["Ruby", "Rails", "Monk"]
+  	@dictionary = ["ruby", "rails", "monk"]
   	@word = @dictionary.sample
   end
 
@@ -21,7 +21,7 @@ class Hangman
   end
 
   def to_dash
-  	letters.map{|letter| letter.gsub(/[a-z]/, '')}
+  	letters.map{|letter| letter.gsub(/[a-z]/, '_')}
   end
   
 end
