@@ -4,7 +4,9 @@ class HangPlay
 
 	def self.start
 		@@game = Hangman.new('lemon')
-		self.show_round
+		until @@game.game_over?
+			self.show_round
+		end
 	end
 
 	def self.show_round

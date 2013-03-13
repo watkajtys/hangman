@@ -17,4 +17,7 @@ class Hangman
 	def won?
 	end
 
+	def lost?
+	end
+
 end
