@@ -1,3 +1,3 @@
-require_relative "hangman"
+require_relative "new_hangman"
 
 Hangman.new(word)
